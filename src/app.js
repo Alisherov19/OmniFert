@@ -8,6 +8,9 @@ const router = require("./routes")
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+app.get("/", (req, res) => {
+  res.send("Server is working ✅");
+});
 //Routes
 app.use("/api/auth", router.authRouter)
 app.use("/api/header", router.HeaderRouter)
